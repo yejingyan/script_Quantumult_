@@ -1,6 +1,27 @@
 const $ = API("APP", true);
 xiaomi_cookie = $.read("xm_shop_cookie")
-$.log(xiaomi_cookie)
+const url = "https://api.m.mi.com/v1/retailmember/do_task";
+const headers = {
+    "Accept-Encoding" : "gzip, deflate, br",
+    "Host" : "api.m.mi.com",
+    "mishop-model" : "iPhone15,2",
+    "Connection" : "keep-alive",
+    "mishop-client-id" : "180100031055",
+    "ios-version" : "system=16.1&device=iPhone15,2",
+    "Accept-Language" : "zh-CN,zh-Hans;q=0.9",
+    "Content-Type" : "application/x-www-form-urlencoded",
+    "Accept" : "*/*",
+    "Cookie" : xiaomi_cookie,
+    };
+const body = "task_id=1"
+$.http.post({
+    url:url,
+    headers,
+    body:body,
+   }).then((response)=> {
+    const body1 = JSON.parse(response.body);
+   $.log(body1);
+   });
 $.done()
 
 
