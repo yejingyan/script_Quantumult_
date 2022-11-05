@@ -20,9 +20,18 @@ $.http.post({
     body:body,
    }).then((response)=> {
     const body1 = JSON.parse(response.body);
-   $.log(body1);
+   if (body1["code"] == 200) {
+    $.log("小米商城:签到成功");
+    $.notify("小米商城签到", "小米商城", "签到成功");
+   }else if (body1["code"] == 2001){
+    $.log("小米商城:已经签到过了");
+    $.notify("小米商城签到", "小米商城", "已经签到过了");
+   }else{
+    $.log("小米商城:签到失败");
+    $.notify("小米商城签到", "小米商城", "签到失败");
+   }
+   $.done();
    });
-$.done()
 
 
 
