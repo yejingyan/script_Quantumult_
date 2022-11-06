@@ -13,7 +13,7 @@ const headers = {
     "Accept" : "*/*",
     "Cookie" : xiaomi_cookie,
     };
-const body = "task_id=1"
+const body = "task_id=1&timestamp_mishop_client=1667507416358&act_id=4B9yhpgq6R94eWN7Lf4ngg"
 $.http.post({
     url:url,
     headers,
