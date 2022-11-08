@@ -2,16 +2,27 @@ const $ = API("APP", true);
 xiaomi_cookie = $.read("xm_shop_cookie")
 const url = "https://api.m.mi.com/v1/retailmember/do_task";
 const headers = {
-    "Accept-Encoding" : "gzip, deflate, br",
-    "Host" : "api.m.mi.com",
-    "mishop-model" : "iPhone15,2",
-    "Connection" : "keep-alive",
-    "mishop-client-id" : "180100031055",
-    "ios-version" : "system=16.1&device=iPhone15,2",
-    "Accept-Language" : "zh-CN,zh-Hans;q=0.9",
-    "Content-Type" : "application/x-www-form-urlencoded",
-    "Accept" : "*/*",
-    "Cookie" : xiaomi_cookie,
+    'magic-device-id' : "202111032235579767cadb64b972cee30d28896f4827f900e9b4691b125523",
+    'Accept-Encoding' : "gzip, deflate, br",
+    'Host' : "api.m.mi.com",
+    'ai-recommend-status' : "0",
+    'mishop-model' : "iPhone15,2",
+    'Connection' : "keep-alive",
+    'locale' : "CN",
+    'User-Agent' : "MiShop/2022101701 CFNetwork/1399 Darwin/22.1.0",
+    'mishop-client-id' : "180100031055",
+    'device-id' : "D891D3E5EE4EC60603A5DA0DB2E32099",
+    'mishop-auth' : "16d63bff6013e9b7;1728688868",
+    'network-carrier' : "46001",
+    'ios-version' : "system=16.1&device=iPhone15,2",
+    'Accept-Language' : "zh-CN,zh-Hans;q=0.9",
+    'Content-Type' : "application/x-www-form-urlencoded",
+    'Accept' : "*/*",
+    'mishop-channel-id' : "",
+    'tracestate' : "sentry=eyJ0cmFjZV9pZCI6IjMzOTYyOWQ4OWNkYTRlMjZhZjk5NWI4YTEwMWI2OTJmIiwicHVibGljX2tleSI6IjA2NGQxODdhZDQ2MzRhZDhiZjBhNTY3Y2MwNGZkNTdiIiwicmVsZWFzZSI6ImNvbS54aWFvbWkubWlzaG9wQDUuMi4xNzYrMjAyMjEwMTcwMSIsImVudmlyb25tZW50IjoiUkVMRUFTRSIsInRyYW5zYWN0aW9uIjoiTWlvdFN0b3JlVmlld0NvbnRyb2xsZXIifQ",
+    'device-oaid' : "3zdnJCx/sLvTs46QfUNfOzIkHNeStiLTwpz0KTFXFTYqArjvvYbkfMkuFk7vSUNI",
+    'Cookie' : xiaomi_cookie,
+    'sentry-trace' : "339629d89cda4e26af995b8a101b692f-009bc3aeebdb4fde-1"
     };
 const body = "task_id=1&timestamp_mishop_client=1667507416358&act_id=4B9yhpgq6R94eWN7Lf4ngg"
 $.http.post({
